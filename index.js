@@ -18,8 +18,8 @@ const aws = require('aws-sdk');
 const app = express();
 app.set('views', './views');
 app.use(express.static('./public'));
-app.use('/assets', express.static(path.join(__dirname + '/assets')));
-app.use('/lib', express.static(path.join(__dirname + '/lib')));
+app.use(express.static('./lib'));
+app.use(express.static('./assets'));
 app.engine('html', require('ejs').renderFile);
 app.listen(process.env.PORT || 3000);
 console.log(process.env.PORT)
