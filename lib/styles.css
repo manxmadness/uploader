@@ -1,0 +1,17 @@
+html {
+background-image: linear-gradient(to top, #accbee 0%, #e7f0fd 100%);
+}
+body {
+  background: none !important;
+  margin: 0;
+}
+
+nav{
+  background: #aaafd1;
+  opacity: .7;
+  padding: 10px;
+  top:0;
+  left:0;
+  position: fixed;
+  width: 100%
+}
