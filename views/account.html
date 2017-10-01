@@ -4,7 +4,7 @@
   <script src="../lib/dat.gui.min.js"></script>
   <script src="../lib/three.js"></script>
   <script src="../lib/OrbitControls.js"></script>
-  <script src="../main.js"></script> -->
+  <script src="../main.js"></script>-->
 </head>
 <input type="file" id="file-input">
 <p id="status">Please select a file</p>
@@ -12,8 +12,6 @@
 
 <form method="POST" action="/save-details">
   <input type="hidden" id="avatar-url" name="avatar-url" value="/images/default.png">
-  <input type="text" name="username" placeholder="Username"><br>
-  <input type="text" name="full-name" placeholder="Full name"><br><br>
   <input type="submit" value="Update profile">
 </form>
 <div id="webgl"></div>
@@ -52,8 +50,10 @@ function uploadFile(file, signedRequest, url){
   xhr.onreadystatechange = () => {
     if(xhr.readyState === 4){
       if(xhr.status === 200){
+
         document.getElementById('preview').src = url;
         document.getElementById('avatar-url').value = url;
+        window.location.href = `http://localhost:5000/render?img=${url}`;
       }
       else{
         alert('Could not upload file.');

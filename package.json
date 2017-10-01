@@ -10,8 +10,10 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "assert": "^1.4.1",
     "aws-sdk": "^2.123.0",
     "ejs": "^2.5.7",
-    "express": "^4.15.5"
+    "express": "^4.16.0",
+    "three": "^0.87.1"
   }
 }
