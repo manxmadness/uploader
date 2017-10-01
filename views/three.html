@@ -3,12 +3,38 @@
 <head>
 	<title>Three.js</title>
 	<link rel="stylesheet" href="lib/styles.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" crossorigin="anonymous">
+	<link href="https://fonts.googleapis.com/css?family=Comfortaa" rel="stylesheet">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-	<nav>
-		<img src="../lib/logo.svg" width="100"/>
-	</nav>
+	<div class="container-fluid top-bar">
+		<div class="row">
+			<div class="col">
+					<a href="#"><img src="../lib/logo-oe.svg" alt=""></a>
+			</div>
+			<div class="col align-self-center text-right">
+				<span class="hidden badge badge-pill badge-danger"></span><i class="fa fa-shopping-cart" aria-hidden="true" style="font-size:20pt"></i>
+			</div>
+		</div>
+	</div>
 	<div id="webgl"></div>
+	<div class="container-fluid bottom">
+		<div class="row">
+			<button role="button" onclick="addSpan()" class="btn btn-outline-light btn-block">Add to cart</button>
+		</div>
+	</div>
+	<script>
+	var num = 0;
+	function addSpan(){
+		num += 1;
+		if ($('.badge').hasClass( "hidden" )){
+			$( ".badge" ).removeClass( "hidden" )
+			}
+		$( ".badge" ).html(num);
+		}
+	</script>
 	<script src="../lib/Tween.min.js"></script>
 	<script src="../lib/perlin.js"></script>
 	<script src="../lib/dat.gui.min.js"></script>
