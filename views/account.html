@@ -51,7 +51,7 @@
   <img id="preview" src="">
 
   <form method="POST" action="/save-details">
-    <input type="hidden" id="avatar-url" name="avatar-url" value="" style="display:none">
+    <!-- <input type="hidden" id="avatar-url" name="avatar-url" value="" style="display:none"> -->
   </form>
 <div id="webgl"></div>
 <script>
@@ -90,8 +90,8 @@ function uploadFile(file, signedRequest, url){
   xhr.onreadystatechange = () => {
     if(xhr.readyState === 4){
       if(xhr.status === 200){
-        document.getElementById('preview').src = url;
-        document.getElementById('avatar-url').value = url;
+        // document.getElementById('preview').src = url;
+        // document.getElementById('avatar-url').value = url;
         // window.location.href = `http://localhost:5000/render?img=${url}`;
         window.location.href = `https://odor-eaters.herokuapp.com/render?img=${url}`;
       }
