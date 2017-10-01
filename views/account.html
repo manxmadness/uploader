@@ -53,7 +53,7 @@ function uploadFile(file, signedRequest, url){
 
         document.getElementById('preview').src = url;
         document.getElementById('avatar-url').value = url;
-        window.location.href = `http://localhost:5000/render?img=${url}`;
+        window.location.href = `https://odor-eaters.herokuapp.com/render?img=${url}`;
       }
       else{
         alert('Could not upload file.');
