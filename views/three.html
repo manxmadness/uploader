@@ -21,11 +21,44 @@
 	</div>
 	<div id="webgl"></div>
 	<div class="container-fluid bottom">
+		<div class="row justify-content-center">
+			<p>Select a bottom color:</p>
+		</div>
 		<div class="row">
-			<button role="button" onclick="addSpan()" class="btn btn-outline-light btn-block">Add to cart</button>
+			<div class="col-3">
+				<div class="sole" id="red"></div>
+			</div>
+			<div class="col-3">
+				<div class="sole" id="orange"></div>
+			</div>
+			<div class="col-3">
+				<div class="sole" id="yellow"></div>
+			</div>
+			<div class="col-3">
+				<div class="sole" id="green"></div>
+			</div>
+		</div>
+			<div class="row" style="padding-top:20px;padding-bottom:20px">
+			<div class="col-3">
+				<div class="sole" id="blue"></div>
+			</div>
+			<div class="col-3">
+				<div class="sole" id="purple"></div>
+			</div>
+			<div class="col-3">
+				<div class="sole" id="black"></div>
+			</div>
+			<div class="col-3">
+				<div class="sole" id="white"></div>
+			</div>
+		</div>
+		<div class="row">
+			<button role="button" class="btn btn-outline-light btn-block" onclick="addSpan()">Add to cart</button>
 		</div>
 	</div>
 	<script>
+
+
 	var num = 0;
 	function addSpan(){
 		num += 1;
@@ -34,6 +67,7 @@
 			}
 		$( ".badge" ).html(num);
 		}
+
 	</script>
 	<script src="../lib/Tween.min.js"></script>
 	<script src="../lib/perlin.js"></script>
