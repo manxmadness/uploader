@@ -40,7 +40,7 @@
 
   </style>
 </head>
-<body>
+<body onload="mobileFunction()">
   <div class="container">
     <div class="row justify-content-center">
       <img src="../lib/logo2.svg" alt=""/>
@@ -60,7 +60,22 @@
   </form>
 
 <div id="webgl"></div>
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
 <script>
+
+function mobileFunction() {
+	if( /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+	 // do nothing
+	}
+	else {
+	  $('#upload').css('display','none')
+		$('#status').text('This experience is optimized for mobile. Come check it out on your phone!')
+
+	}
+}
 
 (() => {
   document.getElementById("file-input").onchange = () => {
@@ -78,10 +93,13 @@ function getSignedRequest(file){
   xhr.open('GET', `/sign-s3?file-name=${file.name}&file-type=${file.type}`);
   xhr.onreadystatechange = () => {
     if(xhr.readyState === 4){
-      if(xhr.status === 200){
+      if(xhr.status === 200 && file.size < 2307200){
         const response = JSON.parse(xhr.responseText);
         uploadFile(file, response.signedRequest, response.url);
       }
+			else if (file.size > 2307200){
+				alert('The image you are trying to upload is too large. Try a smaller image.');
+			}
       else{
         alert('Could not get signed URL.');
       }
